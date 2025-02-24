@@ -7,6 +7,14 @@
     <link rel="stylesheet" href="../css/contact.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <!-- Add EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        // Initialize EmailJS with your User ID
+        (function(){
+            emailjs.init("YOUR_USER_ID"); // Replace with your Public Key (e.g., user_xxxxxxx)
+        })();
+    </script>
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -34,13 +42,14 @@
     <section id="contact">
         <h2>Contact Me</h2>
         <div class="contact-container">
-            <p><i class="fas fa-info-circle"></i> Fill out the form below or reach me directly at <a href="mailto:jimboy@example.com">jimboy@example.com</a></p>
-            <form class="contact-form">
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required>
-                <textarea placeholder="Your Message" required></textarea>
+            <p><i class="fas fa-info-circle"></i> Fill out the form below to reach me!</p>
+            <form id="contact-form" onsubmit="sendMail(event)">
+                <input type="text" id="name" placeholder="Your Name" required>
+                <input type="email" id="email" placeholder="Your Email" required>
+                <textarea id="message" placeholder="Your Message" required></textarea>
                 <button type="submit" class="btn"><i class="fas fa-paper-plane"></i> Send Message</button>
             </form>
+            <p id="status"></p> <!-- Feedback message -->
         </div>
     </section>
 
@@ -48,5 +57,31 @@
     <footer>
         <p>© 2025 Jimboy Pacanut | Innovating with <i class="fas fa-heart"></i></p>
     </footer>
+
+    <!-- JavaScript to Handle Form Submission -->
+    <script>
+        function sendMail(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            const templateParams = {
+                name: name,
+                email: email,
+                message: message
+            };
+
+            emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
+                .then(function(response) {
+                    document.getElementById('status').innerHTML = "Message sent successfully!";
+                    document.getElementById('contact-form').reset(); // Clear form
+                    setTimeout(() => document.getElementById('status').innerHTML = "", 3000); // Clear status after 3s
+                }, function(error) {
+                    document.getElementById('status').innerHTML = "Failed to send message. Try again!";
+                });
+        }
+    </script>
 </body>
 </html>
