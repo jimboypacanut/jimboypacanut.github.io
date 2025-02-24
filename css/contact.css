@@ -5,11 +5,11 @@ body {
     color: #FEFCFB;
     margin: 0;
     padding: 0;
+    text-align: center;
 }
 
 #contact {
     padding: 100px 20px;
-    text-align: center;
 }
 
 h1 {
@@ -28,7 +28,7 @@ p {
 .social-links {
     display: flex;
     justify-content: center;
-    gap: 25px;
+    gap: 40px;
     margin-top: 20px;
 }
 
@@ -40,7 +40,7 @@ p {
 }
 
 .social-icon:hover {
-    transform: scale(1.2);
+    transform: scale(1.3);
     color: #FEFCFB;
 }
 
