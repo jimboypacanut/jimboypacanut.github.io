@@ -1,10 +1,14 @@
-/* General Styling */
+/* Contact Page Styling */
 body {
     font-family: 'Poppins', sans-serif;
     background: #0A1128;
     color: #FEFCFB;
     margin: 0;
     padding: 0;
+}
+
+#contact {
+    padding: 80px 20px;
     text-align: center;
 }
 
@@ -17,52 +21,44 @@ h1 {
 p {
     font-size: 1.2rem;
     color: #ddd;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
-/* Social Icons */
+/* Social Media Icons */
 .social-icons {
     display: flex;
     justify-content: center;
-    gap: 30px;
-    margin-top: 20px;
+    gap: 25px;
+    font-size: 2rem;
+    margin-bottom: 20px;
 }
 
 .social-icons a {
-    font-size: 2.5rem;
-    color: #1282A2;
+    color: #FEFCFB;
     transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
 .social-icons a:hover {
-    color: #FEFCFB;
     transform: scale(1.2);
+    color: #1282A2;
 }
 
-/* Google Map */
-#map {
-    margin-top: 50px;
+/* Email Link */
+.email-link {
+    color: #1282A2;
+    text-decoration: none;
+    font-weight: bold;
 }
 
-#map h2 {
-    font-size: 2rem;
-    color: #FEFCFB;
-    margin-bottom: 10px;
+.email-link:hover {
+    text-decoration: underline;
 }
 
-iframe {
-    width: 80%;
-    height: 300px;
-    border: 0;
-    border-radius: 10px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
-}
-
-/* Footer */
-footer {
-    margin-top: 50px;
-    padding: 20px;
-    background: #001F54;
-    color: #FEFCFB;
-    font-size: 1rem;
+/* Map Container */
+.map-container {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
