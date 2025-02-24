@@ -10,13 +10,14 @@ body {
 
 /* Navigation */
 header {
-    background: #001F54;
+    background: rgba(0, 31, 84, 0.9);
     padding: 15px 0;
     position: fixed;
     width: 100%;
     top: 0;
     left: 0;
     z-index: 100;
+    transition: background 0.3s ease;
 }
 
 nav {
@@ -51,7 +52,7 @@ nav ul li a {
     text-decoration: none;
     color: #FEFCFB;
     font-weight: 600;
-    transition: 0.3s;
+    transition: color 0.3s ease;
 }
 
 nav ul li a:hover,
@@ -67,16 +68,24 @@ nav ul li a.active {
     height: 100vh;
     background: linear-gradient(135deg, #034078, #1282A2);
     color: #FEFCFB;
+    text-align: center;
+    padding: 20px;
 }
 
 .hero h1 {
-    font-size: 3.5rem;
+    font-size: 4rem;
     font-weight: 700;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.hero h1 span {
+    color: #1282A2;
 }
 
 .hero p {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     margin-bottom: 20px;
+    animation: fadeIn 2s ease-in-out;
 }
 
 /* Sections */
@@ -105,10 +114,16 @@ h2 {
     width: 300px;
     text-align: center;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
 }
 
 .project-card h3 {
     font-size: 1.8rem;
+    color: #FEFCFB;
 }
 
 .project-card p {
@@ -134,7 +149,7 @@ h2 {
     text-decoration: none;
     border-radius: 8px;
     font-weight: 600;
-    transition: 0.3s;
+    transition: background 0.3s ease;
     display: inline-block;
 }
 
@@ -149,4 +164,10 @@ footer {
     font-size: 0.9rem;
     color: #FEFCFB;
     margin-top: 50px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 1; transform: translateY(0); }
 }
