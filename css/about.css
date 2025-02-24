@@ -1,101 +1,24 @@
-/* General Styles */
+/* General Styling */
 body {
     font-family: 'Poppins', sans-serif;
+    background: #0A1128;
+    color: #FEFCFB;
     margin: 0;
     padding: 0;
-    background-color: #0A1128;
-    color: #FEFCFB;
-    text-align: center;
-}
-
-/* Navigation */
-header {
-    background: rgba(0, 31, 84, 0.9);
-    padding: 15px 0;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 100;
-    transition: background 0.3s ease;
-}
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: auto;
-    padding: 0 20px;
-}
-
-.logo {
-    font-size: 1.5rem;
-    font-weight: 600;
-}
-
-.logo span {
-    color: #1282A2;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-}
-
-nav ul li {
-    margin: 0 15px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #FEFCFB;
-    font-weight: 600;
-    transition: color 0.3s ease;
-}
-
-nav ul li a:hover,
-nav ul li a.active {
-    color: #1282A2;
-}
-
-/* Hero Section */
-#hero {
-    height: 80vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(135deg, #034078, #1282A2);
-    text-align: center;
-    color: white;
-    padding: 20px;
-}
-
-.hero-content h1 {
-    font-size: 3rem;
-    font-weight: 700;
-    animation: fadeIn 1.5s ease-in-out;
-}
-
-.hero-content h1 span {
-    color: #1282A2;
-}
-
-.hero-content p {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-    animation: fadeIn 2s ease-in-out;
 }
 
 /* About Section */
+#about {
+    padding: 80px 20px;
+    text-align: center;
+}
+
 .about-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 50px;
-    padding: 100px 20px;
-    max-width: 1200px;
+    gap: 30px;
+    max-width: 1000px;
     margin: auto;
 }
 
@@ -110,85 +33,77 @@ nav ul li a.active {
     text-align: left;
 }
 
-.about-text h2 {
-    font-size: 2.5rem;
-    color: #1282A2;
+.personal-info {
+    background: #034078;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 15px;
 }
 
-.about-text p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
+.personal-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.personal-info li {
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+/* Education Section */
+#education {
+    text-align: center;
+    padding: 60px 20px;
+    background: #001F54;
+}
+
+.education-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 800px;
+    margin: auto;
+}
+
+.edu-item {
+    background: #034078;
+    padding: 15px;
+    border-radius: 10px;
+    width: 200px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+}
+
+.edu-item:hover {
+    transform: scale(1.05);
 }
 
 /* Skills Section */
 #skills {
-    padding: 100px 20px;
-    background: #001F54;
+    padding: 60px 20px;
+    text-align: center;
 }
 
 .skills-container {
     display: flex;
     justify-content: center;
     gap: 30px;
-    flex-wrap: wrap;
+    max-width: 900px;
+    margin: auto;
 }
 
 .skill-card {
-    background: #034078;
+    background: #1282A2;
     padding: 20px;
     border-radius: 10px;
     width: 250px;
     text-align: center;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease-in-out;
-}
-
-.skill-card:hover {
-    transform: translateY(-5px);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 .skill-card i {
-    font-size: 2.5rem;
-    color: #1282A2;
+    font-size: 2rem;
     margin-bottom: 10px;
-}
-
-.skill-card h3 {
-    font-size: 1.8rem;
     color: #FEFCFB;
-}
-
-.skill-card p {
-    font-size: 1rem;
-}
-
-/* Button */
-.btn {
-    background: #1282A2;
-    color: white;
-    padding: 12px 24px;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: 600;
-    transition: background 0.3s ease;
-    display: inline-block;
-}
-
-.btn:hover {
-    background: #034078;
-}
-
-/* Footer */
-footer {
-    background: #001F54;
-    padding: 20px;
-    font-size: 0.9rem;
-    color: #FEFCFB;
-    margin-top: 50px;
-}
-
-/* Animations */
-@keyframes fadeIn {
-    0% { opacity: 0; transform: translateY(10px); }
-    100% { opacity: 1; transform: translateY(0); }
 }
