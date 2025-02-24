@@ -5,7 +5,7 @@ body {
     padding: 0;
     background-color: #0A1128;
     color: #FEFCFB;
-    text-align: center;
+    line-height: 1.6;
 }
 
 /* Navigation */
@@ -15,9 +15,7 @@ header {
     position: fixed;
     width: 100%;
     top: 0;
-    left: 0;
-    z-index: 100;
-    transition: background 0.3s ease;
+    z-index: 1000;
 }
 
 nav {
@@ -25,27 +23,20 @@ nav {
     justify-content: space-between;
     align-items: center;
     max-width: 1200px;
-    margin: auto;
+    margin: 0 auto;
     padding: 0 20px;
 }
 
-.logo {
+.logo span {
     font-size: 1.5rem;
     font-weight: 600;
-}
-
-.logo span {
     color: #1282A2;
 }
 
 nav ul {
     list-style: none;
-    padding: 0;
     display: flex;
-}
-
-nav ul li {
-    margin: 0 15px;
+    gap: 20px;
 }
 
 nav ul li a {
@@ -62,12 +53,11 @@ nav ul li a.active {
 
 /* Hero Section */
 #home {
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     background: linear-gradient(135deg, #034078, #1282A2);
-    color: #FEFCFB;
     text-align: center;
     padding: 20px;
 }
@@ -78,19 +68,19 @@ nav ul li a.active {
     animation: fadeIn 1.5s ease-in-out;
 }
 
-.hero h1 span {
-    color: #1282A2;
-}
-
 .hero p {
     font-size: 1.5rem;
-    margin-bottom: 20px;
-    animation: fadeIn 2s ease-in-out;
+    margin: 20px 0;
+}
+
+.hero p i {
+    margin: 0 5px;
 }
 
 /* Sections */
 section {
     padding: 100px 20px;
+    text-align: center;
 }
 
 h2 {
@@ -99,7 +89,7 @@ h2 {
     color: #1282A2;
 }
 
-/* Project Cards */
+/* Projects */
 .projects-container {
     display: flex;
     justify-content: center;
@@ -112,9 +102,8 @@ h2 {
     padding: 20px;
     border-radius: 10px;
     width: 300px;
-    text-align: center;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
 }
 
 .project-card:hover {
@@ -128,23 +117,13 @@ h2 {
 
 .project-card p {
     font-size: 1rem;
-    margin-bottom: 15px;
-}
-
-/* Contact Section */
-#contact {
-    background: #001F54;
-    padding: 60px 20px;
-}
-
-#contact p {
-    font-size: 1.2rem;
+    margin: 15px 0;
 }
 
 /* Button */
 .btn {
     background: #1282A2;
-    color: white;
+    color: #FEFCFB;
     padding: 12px 24px;
     text-decoration: none;
     border-radius: 8px;
@@ -162,8 +141,6 @@ footer {
     background: #001F54;
     padding: 20px;
     font-size: 0.9rem;
-    color: #FEFCFB;
-    margin-top: 50px;
 }
 
 /* Animations */
