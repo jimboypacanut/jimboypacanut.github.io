@@ -91,18 +91,22 @@ nav ul li a:hover, nav ul li a.active {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 30px;
-    max-width: 1100px;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 50px 10%;
 }
 
 .about-img img {
-    width: 250px;
-    height: auto;
-    border-radius: 10px;
+    width: 250px; /* Adjust size as needed */
+    height: 250px;
+    border-radius: 50%; /* Makes it a circle */
+    object-fit: cover; /* Ensures the image is cropped properly */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .about-text {
-    max-width: 600px;
+    max-width: 500px;
+    text-align: left;
 }
 
 .about-text h2 {
@@ -112,7 +116,7 @@ nav ul li a:hover, nav ul li a.active {
 
 .about-text p {
     font-size: 16px;
-    margin-bottom: 20px;
+    line-height: 1.6;
 }
 
 .btn {
