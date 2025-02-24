@@ -1,72 +1,66 @@
-* {
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    background-color: #0A1128;
+    color: #FEFCFB;
+    text-align: center;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    color: #fff;
-    background: linear-gradient(to bottom, #B0E0E6, #87CEEB); /* Light sky blues */
-    min-height: 100vh;
-}
-
-nav {
-    background: rgba(255, 255, 255, 0.9);
-    padding: 1rem;
-    position: sticky;
-    top: 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
+/* Navigation */
 nav ul {
     list-style: none;
+    padding: 0;
+    background: #001F54;
+    margin: 0;
     display: flex;
     justify-content: center;
+    padding: 15px 0;
 }
 
 nav ul li {
-    margin: 0 1rem;
+    margin: 0 15px;
 }
 
-nav a {
+nav ul li a {
     text-decoration: none;
-    color: #4682B4;
-    font-weight: bold;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    transition: background 0.3s ease;
+    color: #FEFCFB;
+    font-weight: 600;
+    transition: 0.3s;
 }
 
-nav a:hover {
-    background: #00BFFF;
-    color: #fff;
+nav ul li a:hover,
+nav ul li a.active {
+    color: #1282A2;
 }
 
-nav a.active {
-    background: #87CEEB;
-    color: #fff;
+/* Hero Section */
+.hero {
+    margin-top: 100px;
 }
 
-#home {
-    min-height: 80vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    position: relative;
+.hero h1 {
+    font-size: 3rem;
+    font-weight: 600;
 }
 
-#home::after {
-    content: "🥥";
-    font-size: 2rem;
-    position: absolute;
-    bottom: 1rem;
-    right: 1rem;
-    opacity: 0.7;
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
 }
 
-h1 {
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+/* Button */
+.btn {
+    background: #1282A2;
+    color: white;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #034078;
 }
