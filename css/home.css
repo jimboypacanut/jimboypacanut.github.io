@@ -9,14 +9,38 @@ body {
 }
 
 /* Navigation */
+header {
+    background: #001F54;
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.logo span {
+    color: #1282A2;
+}
+
 nav ul {
     list-style: none;
     padding: 0;
-    background: #001F54;
-    margin: 0;
     display: flex;
-    justify-content: center;
-    padding: 15px 0;
 }
 
 nav ul li {
@@ -36,18 +60,70 @@ nav ul li a.active {
 }
 
 /* Hero Section */
-.hero {
-    margin-top: 100px;
+#home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #034078, #1282A2);
+    color: #FEFCFB;
 }
 
 .hero h1 {
-    font-size: 3rem;
-    font-weight: 600;
+    font-size: 3.5rem;
+    font-weight: 700;
 }
 
 .hero p {
     font-size: 1.2rem;
     margin-bottom: 20px;
+}
+
+/* Sections */
+section {
+    padding: 100px 20px;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #1282A2;
+}
+
+/* Project Cards */
+.projects-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.project-card {
+    background: #034078;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.project-card h3 {
+    font-size: 1.8rem;
+}
+
+.project-card p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+/* Contact Section */
+#contact {
+    background: #001F54;
+    padding: 60px 20px;
+}
+
+#contact p {
+    font-size: 1.2rem;
 }
 
 /* Button */
@@ -59,8 +135,18 @@ nav ul li a.active {
     border-radius: 8px;
     font-weight: 600;
     transition: 0.3s;
+    display: inline-block;
 }
 
 .btn:hover {
     background: #034078;
+}
+
+/* Footer */
+footer {
+    background: #001F54;
+    padding: 20px;
+    font-size: 0.9rem;
+    color: #FEFCFB;
+    margin-top: 50px;
 }
