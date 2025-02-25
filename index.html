@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="css/home.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -67,9 +70,50 @@
         <a href="html/contact.html" class="btn">Contact Me</a>
     </section>
 
-    <!-- Footer -->
+    <!-- Footer with Visitor Counter -->
     <footer>
-        <p>© 2025 Jimboy Pacanut | Built with <i class="fas fa-heart"></i> passion</p>
+        <p>© 2025 Jimboy Pacanut | Built with <i class="fas fa-heart"></i> passion | Visitors: <span id="visitor-count">0</span></p>
     </footer>
+
+    <!-- Firebase Initialization and Counter Logic -->
+    <script>
+        // Your Firebase config
+        const firebaseConfig = {
+            apiKey: "AIzaSyAXdos-eyIW38LD7LPPSVAu4o20XAriMKU",
+            authDomain: "jimboyportfolio.firebaseapp.com",
+            projectId: "jimboyportfolio",
+            storageBucket: "jimboyportfolio.firebasestorage.app",
+            messagingSenderId: "1083330373357",
+            appId: "1:1083330373357:web:566451415c26fede4c8ee4"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+
+        // Visitor counter function
+        async function updateVisitorCount() {
+            const counterRef = db.collection('siteData').doc('visitorCounter');
+            try {
+                await db.runTransaction(async (transaction) => {
+                    const doc = await transaction.get(counterRef);
+                    if (!doc.exists) {
+                        transaction.set(counterRef, { count: 1 });
+                        document.getElementById('visitor-count').textContent = 1;
+                    } else {
+                        const newCount = doc.data().count + 1;
+                        transaction.update(counterRef, { count: newCount });
+                        document.getElementById('visitor-count').textContent = newCount;
+                    }
+                });
+            } catch (error) {
+                console.error("Error updating visitor count:", error);
+                document.getElementById('visitor-count').textContent = "N/A";
+            }
+        }
+
+        // Call the function on page load
+        updateVisitorCount();
+    </script>
 </body>
 </html>
