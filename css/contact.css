@@ -94,50 +94,94 @@ h2 {
     margin: 0 auto;
     background: #034078;
     padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-.contact-container p a {
-    color: #1282A2;
-    text-decoration: none;
+.contact-info {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
 }
 
-.contact-form {
+.contact-info i {
+    margin-right: 8px;
+}
+
+/* Modern Form Styling */
+.modern-contact-form {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
 }
 
-.contact-form input,
-.contact-form textarea {
-    padding: 10px;
-    border: 1px solid #1282A2;
-    border-radius: 5px;
+.form-group {
+    position: relative;
+}
+
+.modern-contact-form input,
+.modern-contact-form textarea {
+    width: 100%;
+    padding: 14px 20px;
+    border: 2px solid #1282A2;
+    border-radius: 8px;
     background: #0A1128;
     color: #FEFCFB;
     font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    transition: border-color 0.3s ease, transform 0.2s ease;
 }
 
-.contact-form textarea {
-    height: 120px;
+.modern-contact-form input:focus,
+.modern-contact-form textarea:focus {
+    outline: none;
+    border-color: #FEFCFB;
+    transform: translateY(-2px);
+}
+
+.modern-contact-form textarea {
+    height: 140px;
     resize: none;
+}
+
+.modern-contact-form input::placeholder,
+.modern-contact-form textarea::placeholder {
+    color: #a0b4c8;
+    opacity: 0.8;
 }
 
 .btn {
     background: #1282A2;
     color: #FEFCFB;
-    padding: 12px 24px;
+    padding: 14px 28px;
     text-decoration: none;
     border-radius: 8px;
     font-weight: 600;
-    transition: background 0.3s ease;
+    font-size: 1.1rem;
     border: none;
     cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .btn:hover {
-    background: #034078;
+    background: #FEFCFB;
+    color: #034078;
+    transform: translateY(-3px);
+}
+
+.btn i {
+    margin-right: 8px;
+}
+
+/* Status Message */
+.status-message {
+    margin-top: 15px;
+    font-size: 1rem;
+    font-weight: 400;
+    transition: opacity 0.3s ease;
+}
+
+.status-message:empty {
+    display: none;
 }
 
 /* Footer */
