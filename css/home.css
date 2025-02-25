@@ -136,11 +136,19 @@ h2 {
     background: #034078;
 }
 
-/* Footer */
+/* Footer with Visitor Counter */
 footer {
     background: #001F54;
     padding: 20px;
     font-size: 0.9rem;
+    text-align: center;
+}
+
+#visitor-count {
+    color: #1282A2;
+    font-weight: 600;
+    margin-left: 5px;
+    font-size: 1rem;
 }
 
 /* Animations */
