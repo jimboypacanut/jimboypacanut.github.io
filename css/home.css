@@ -1,7 +1,17 @@
+/* ----------------- GENERAL STYLES ----------------- */
 body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #0A1128;
+    color: #FEFCFB;
+    line-height: 1.6;
+    scroll-behavior: smooth;
     position: relative;
+    overflow-x: hidden;
 }
 
+/* Background Glow Effects */
 body::before {
     content: "";
     position: fixed;
@@ -23,6 +33,72 @@ body::after {
     background: radial-gradient(circle, rgba(18,130,162,0.15), transparent 70%);
     z-index: -1;
 }
+
+a {
+    text-decoration: none;
+}
+
+/* ----------------- NAVIGATION ----------------- */
+header {
+    background: rgba(0, 31, 84, 0.85);
+    backdrop-filter: blur(12px);
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo span {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #00BFFF;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+nav ul li a {
+    font-weight: 600;
+    color: #FEFCFB;
+    position: relative;
+    transition: 0.3s ease;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    height: 2px;
+    width: 0%;
+    background: linear-gradient(90deg, #1282A2, #00BFFF);
+    transition: 0.3s;
+}
+
+nav ul li a:hover::after,
+nav ul li a.active::after {
+    width: 100%;
+}
+
+nav ul li a:hover {
+    color: #00BFFF;
+}
+
+/* ----------------- HERO SECTION ----------------- */
 #home {
     height: 100vh;
     display: flex;
@@ -37,6 +113,7 @@ body::after {
     font-size: 4.5rem;
     font-weight: 800;
     letter-spacing: -1px;
+    margin-bottom: 20px;
     background: linear-gradient(135deg, #FEFCFB, #00BFFF);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -49,11 +126,41 @@ body::after {
     opacity: 0;
     animation: fadeInUp 1.5s ease forwards;
 }
-section {
-    padding: 120px 20px;
+
+.hero p i {
+    margin: 0 8px;
+    color: #00BFFF;
 }
+
+/* ----------------- SECTIONS ----------------- */
 section {
     padding: 140px 20px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 3rem;
+    margin-bottom: 30px;
+    font-weight: 700;
+    color: #FEFCFB;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #1282A2, #00BFFF);
+    margin: 12px auto 0;
+    border-radius: 3px;
+}
+
+/* ----------------- PROJECT CARDS ----------------- */
+.projects-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
 }
 
 .project-card {
@@ -66,6 +173,8 @@ section {
     transition: all 0.4s ease;
     position: relative;
     overflow: hidden;
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
 }
 
 .project-card::before {
@@ -75,7 +184,7 @@ section {
     left: -50%;
     width: 200%;
     height: 200%;
-    background: radial-gradient(circle, rgba(0,191,255,0.1), transparent 60%);
+    background: radial-gradient(circle, rgba(0,191,255,0.08), transparent 60%);
     transform: rotate(25deg);
 }
 
@@ -85,6 +194,18 @@ section {
     box-shadow: 0 20px 50px rgba(0,0,0,0.6);
 }
 
+.project-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #00BFFF;
+}
+
+.project-card p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+/* ----------------- BUTTONS ----------------- */
 .btn {
     font-weight: 600;
     background: linear-gradient(135deg, #1282A2, #00BFFF);
@@ -101,20 +222,58 @@ section {
     box-shadow: 0 12px 30px rgba(0,191,255,0.4);
 }
 
-h2 {
-    font-size: 3rem;
-    margin-bottom: 30px;
+/* ----------------- FOOTER ----------------- */
+footer {
+    background: #001F54;
+    padding: 30px 20px;
+    font-size: 0.9rem;
+    text-align: center;
     color: #FEFCFB;
+}
+
+#visitor-count {
+    color: #00BFFF;
     font-weight: 700;
 }
 
-h2::after {
-    width: 80px;
-    height: 4px;
-    background: linear-gradient(90deg, #1282A2, #00BFFF);
+.social-icons {
+    margin-top: 15px;
 }
 
-.project-card {
-    opacity: 0;
-    animation: fadeInUp 1s ease forwards;
+.social-icons a {
+    margin: 0 14px;
+    font-size: 22px;
+    color: #FEFCFB;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    color: #00BFFF;
+    transform: translateY(-3px);
+}
+
+/* ----------------- ANIMATIONS ----------------- */
+@keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(25px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ----------------- RESPONSIVE ----------------- */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    .projects-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul {
+        gap: 15px;
+    }
 }
