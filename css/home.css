@@ -1,237 +1,120 @@
-/* ----------------- GENERAL STYLES ----------------- */
 body {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-    background: #0A1128;
-    color: #FEFCFB;
-    line-height: 1.6;
-    scroll-behavior: smooth;
-}
-
-a {
-    text-decoration: none;
-}
-
-/* ----------------- NAVIGATION ----------------- */
-header {
-    background: rgba(0, 31, 84, 0.95);
-    backdrop-filter: blur(8px);
-    padding: 15px 0;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-}
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.logo span {
-    font-size: 1.7rem;
-    font-weight: 700;
-    color: #1282A2;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 25px;
-}
-
-nav ul li a {
-    font-weight: 600;
-    color: #FEFCFB;
     position: relative;
-    transition: color 0.3s ease;
 }
 
-nav ul li a::after {
-    content: '';
-    display: block;
-    height: 2px;
-    background: #1282A2;
-    width: 0%;
-    transition: width 0.3s;
-    position: absolute;
-    bottom: -4px;
-    left: 0;
+body::before {
+    content: "";
+    position: fixed;
+    top: -200px;
+    right: -200px;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(0,191,255,0.15), transparent 70%);
+    z-index: -1;
 }
 
-nav ul li a:hover::after,
-nav ul li a.active::after {
-    width: 100%;
+body::after {
+    content: "";
+    position: fixed;
+    bottom: -200px;
+    left: -200px;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(18,130,162,0.15), transparent 70%);
+    z-index: -1;
 }
-
-nav ul li a:hover {
-    color: #1282A2;
-}
-
-/* ----------------- HERO SECTION ----------------- */
 #home {
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(135deg, #034078, #1282A2);
+    background: linear-gradient(145deg, #0A1128 40%, #034078 100%);
     text-align: center;
     padding: 0 20px;
 }
 
 .hero h1 {
-    font-size: 4rem;
+    font-size: 4.5rem;
     font-weight: 800;
-    margin-bottom: 20px;
+    letter-spacing: -1px;
+    background: linear-gradient(135deg, #FEFCFB, #00BFFF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     animation: fadeInUp 1.2s ease forwards;
 }
 
 .hero p {
-    font-size: 1.5rem;
-    margin-bottom: 30px;
+    font-size: 1.4rem;
+    margin-bottom: 35px;
     opacity: 0;
     animation: fadeInUp 1.5s ease forwards;
 }
-
-.hero p i {
-    margin: 0 8px;
-    color: #00BFFF;
-}
-
-.hero .btn {
-    font-size: 1.1rem;
-    padding: 14px 28px;
-    border-radius: 10px;
-    background: linear-gradient(135deg, #1282A2, #00BFFF);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-}
-
-/* ----------------- SECTIONS ----------------- */
 section {
     padding: 120px 20px;
-    text-align: center;
 }
-
-h2 {
-    font-size: 2.8rem;
-    margin-bottom: 25px;
-    color: #1282A2;
-    position: relative;
-}
-
-h2::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 4px;
-    background: #00BFFF;
-    margin: 10px auto 0 auto;
-    border-radius: 2px;
-}
-
-/* ----------------- PROJECT CARDS ----------------- */
-.projects-container {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    flex-wrap: wrap;
+section {
+    padding: 140px 20px;
 }
 
 .project-card {
-    background: rgba(2, 40, 80, 0.85);
-    backdrop-filter: blur(10px);
-    border: 1px solid #1282A2;
-    padding: 25px;
-    border-radius: 15px;
-    width: 300px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    background: rgba(10, 17, 40, 0.9);
+    border: 1px solid rgba(0,191,255,0.2);
+    padding: 30px;
+    border-radius: 18px;
+    width: 320px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-card::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(0,191,255,0.1), transparent 60%);
+    transform: rotate(25deg);
 }
 
 .project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+    transform: translateY(-12px);
+    border-color: #00BFFF;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.6);
 }
 
-.project-card h3 {
-    font-size: 1.8rem;
-    margin-bottom: 15px;
-    color: #00BFFF;
-}
-
-.project-card p {
-    font-size: 1rem;
-    margin-bottom: 20px;
-}
-
-/* ----------------- BUTTONS ----------------- */
 .btn {
-    font-weight: 700;
-    background: #1282A2;
+    font-weight: 600;
+    background: linear-gradient(135deg, #1282A2, #00BFFF);
     color: #FEFCFB;
-    padding: 12px 26px;
-    border-radius: 8px;
+    padding: 14px 30px;
+    border-radius: 12px;
     transition: all 0.3s ease;
     display: inline-block;
+    letter-spacing: 0.5px;
 }
 
 .btn:hover {
-    background: #00BFFF;
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0,191,255,0.4);
 }
 
-/* ----------------- FOOTER ----------------- */
-footer {
-    background: #001F54;
-    padding: 25px 20px;
-    font-size: 0.9rem;
-    text-align: center;
+h2 {
+    font-size: 3rem;
+    margin-bottom: 30px;
     color: #FEFCFB;
-}
-
-#visitor-count {
-    color: #00BFFF;
     font-weight: 700;
 }
 
-.social-icons {
-    margin-top: 15px;
+h2::after {
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #1282A2, #00BFFF);
 }
 
-.social-icons a {
-    margin: 0 12px;
-    font-size: 22px;
-    color: #FEFCFB;
-    transition: 0.3s;
-}
-
-.social-icons a:hover {
-    color: #00BFFF;
-}
-
-/* ----------------- ANIMATIONS ----------------- */
-@keyframes fadeInUp {
-    0% { opacity: 0; transform: translateY(20px); }
-    100% { opacity: 1; transform: translateY(0); }
-}
-
-/* ----------------- RESPONSIVE ----------------- */
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 3rem;
-    }
-    .hero p {
-        font-size: 1.2rem;
-    }
-    .projects-container {
-        flex-direction: column;
-        align-items: center;
-    }
+.project-card {
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
 }
