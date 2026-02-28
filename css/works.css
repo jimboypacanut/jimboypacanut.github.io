@@ -1,21 +1,24 @@
-/* General Styles */
+/* ----------------- GENERAL ----------------- */
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #0A1128;
+    background: #0A1128;
     color: #FEFCFB;
     line-height: 1.6;
+    scroll-behavior: smooth;
 }
 
-/* Navigation */
+/* ----------------- NAVIGATION ----------------- */
 header {
-    background: rgba(0, 31, 84, 0.9);
+    background: rgba(0, 31, 84, 0.95);
+    backdrop-filter: blur(8px);
     padding: 15px 0;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
 }
 
 nav {
@@ -28,148 +31,94 @@ nav {
 }
 
 .logo span {
-    font-size: 1.5rem;
-    font-weight: 600;
+    font-size: 1.7rem;
+    font-weight: 700;
     color: #1282A2;
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 25px;
 }
 
 nav ul li a {
-    text-decoration: none;
-    color: #FEFCFB;
     font-weight: 600;
+    color: #FEFCFB;
+    position: relative;
     transition: color 0.3s ease;
 }
 
-nav ul li a:hover,
-nav ul li a.active {
-    color: #1282A2;
+nav ul li a::after {
+    content: '';
+    display: block;
+    height: 2px;
+    background: #00BFFF;
+    width: 0%;
+    transition: width 0.3s;
+    position: absolute;
+    bottom: -4px;
+    left: 0;
 }
 
-/* Hero Section */
-#home {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(135deg, #034078, #1282A2);
-    text-align: center;
-    padding: 20px;
-}
-
-.hero h1 {
-    font-size: 4rem;
-    font-weight: 700;
-    animation: fadeIn 1.5s ease-in-out;
-}
-
-.hero p {
-    font-size: 1.5rem;
-    margin: 20px 0;
-}
-
-.hero p i {
-    margin: 0 5px;
-}
-
-/* Works Section */
-#works {
-    padding: 100px 20px;
-    text-align: center;
-}
-
-h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: #1282A2;
-}
-
-.projects-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.project-card {
-    background: #034078;
-    padding: 20px;
-    border-radius: 10px;
-    width: 300px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
-}
-
-.project-card:hover {
-    transform: translateY(-5px);
-}
-
-.project-card img {
+nav ul li a:hover::after,
+nav ul li a.active::after {
     width: 100%;
-    border-radius: 5px;
-    margin-bottom: 15px;
 }
 
-.project-card h3 {
-    font-size: 1.8rem;
-    color: #FEFCFB;
+nav ul li a:hover {
+    color: #00BFFF;
 }
 
-.project-card p {
-    font-size: 1rem;
-    margin: 15px 0;
-}
-
-/* Footer */
-footer {
-    background: #001F54;
-    padding: 20px;
-    font-size: 0.9rem;
-}
-
-/* Animations */
-@keyframes fadeIn {
-    0% { opacity: 0; transform: translateY(10px); }
-    100% { opacity: 1; transform: translateY(0); }
-}
-
-body {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-}
-
-section {
-    padding: 60px 10%;
-}
-
+/* ----------------- HERO ----------------- */
 .works-hero {
     text-align: center;
-    padding: 80px 10%;
+    padding: 120px 20px 80px 20px;
+    background: linear-gradient(135deg, #034078, #1282A2);
 }
 
+.works-hero h1 {
+    font-size: 3.8rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+    animation: fadeInUp 1s ease forwards;
+}
+
+.works-hero p {
+    font-size: 1.4rem;
+    opacity: 0;
+    animation: fadeInUp 1.5s ease forwards;
+}
+
+.works-hero p i {
+    margin-right: 8px;
+    color: #00BFFF;
+}
+
+/* ----------------- PROJECT CARDS ----------------- */
 .projects-container {
     display: flex;
     gap: 30px;
     flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 20px;
 }
 
 .project-card {
-    flex: 1 1 300px;
-    background: #f5f5f5;
-    border-radius: 12px;
+    background: rgba(2, 40, 80, 0.85);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
     overflow: hidden;
-    transition: 0.3s;
+    width: 300px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .project-card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.6);
 }
 
 .project-card img {
@@ -182,52 +131,86 @@ section {
     padding: 20px;
 }
 
-.project-buttons {
-    margin-top: 15px;
+.project-content h3 {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+    color: #00BFFF;
 }
 
-.btn {
-    display: inline-block;
-    padding: 8px 16px;
-    background: #333;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 6px;
-    margin-right: 10px;
-    transition: 0.3s;
+.project-content p {
+    font-size: 1rem;
+    color: #FEFCFB;
+    margin-bottom: 15px;
 }
 
-.btn:hover {
-    background: #555;
+.project-buttons .btn,
+.project-buttons .btn-outline {
+    padding: 10px 20px;
+    font-weight: 600;
+    border-radius: 10px;
+    transition: all 0.3s ease;
 }
 
-.btn-outline {
-    display: inline-block;
-    padding: 8px 16px;
-    border: 2px solid #333;
-    color: #333;
-    text-decoration: none;
-    border-radius: 6px;
-    transition: 0.3s;
+.project-buttons .btn {
+    background: linear-gradient(135deg, #1282A2, #00BFFF);
+    color: #FEFCFB;
+    border: none;
 }
 
-.btn-outline:hover {
-    background: #333;
-    color: #fff;
+.project-buttons .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
 }
 
+.project-buttons .btn-outline {
+    border: 2px solid #00BFFF;
+    background: transparent;
+    color: #00BFFF;
+}
+
+.project-buttons .btn-outline:hover {
+    background: #00BFFF;
+    color: #FEFCFB;
+}
+
+/* ----------------- FOOTER ----------------- */
 footer {
+    background: #001F54;
+    padding: 25px 20px;
+    font-size: 0.9rem;
     text-align: center;
-    padding: 20px;
+    color: #FEFCFB;
+}
+
+.social-icons {
+    margin-top: 15px;
 }
 
 .social-icons a {
     margin: 0 12px;
     font-size: 22px;
-    color: #333;
+    color: #FEFCFB;
     transition: 0.3s;
 }
 
 .social-icons a:hover {
-    color: #0077b5;
+    color: #00BFFF;
+}
+
+/* ----------------- ANIMATIONS ----------------- */
+@keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ----------------- RESPONSIVE ----------------- */
+@media (max-width: 768px) {
+    .projects-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-card {
+        width: 80%;
+    }
 }
