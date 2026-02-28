@@ -166,3 +166,66 @@ footer {
     0% { opacity: 0; transform: translateY(10px); }
     100% { opacity: 1; transform: translateY(0); }
 }
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+}
+
+section {
+    padding: 60px 10%;
+}
+
+.about-hero {
+    text-align: center;
+    padding: 80px 10%;
+}
+
+.about-container {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.about-img img {
+    width: 250px;
+    border-radius: 12px;
+}
+
+.education-container,
+.skills-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.edu-item,
+.skill-card {
+    flex: 1 1 220px;
+    padding: 20px;
+    border-radius: 10px;
+    background: #f5f5f5;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.edu-item:hover,
+.skill-card:hover {
+    transform: translateY(-5px);
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+}
+
+.social-icons a {
+    margin: 0 12px;
+    font-size: 22px;
+    color: #333;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    color: #0077b5;
+}
